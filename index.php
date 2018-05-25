@@ -1,3 +1,46 @@
+<?php
+session_start();
+if($_SESSION['role'] == 'admin')
+{
+	header("location:admin/admin.php");
+}
+else if($_SESSION['role'] == 'user')
+{
+	header("location:user/user.php");
+}
+
+$email=$_REQUEST['email'];
+$pass=$_REQUEST['password'];
+mysql_connect("localhost","root","root");
+mysql_select_db("mansa_project");
+$str=mysql_query("SELECT * FROM `user` where email='$email' and password='$pass'");
+$row=mysql_fetch_array($str);
+
+$error = "";
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+  if($email!=$row['email'] || $pass!=$row['password']){
+    $error = 'Incorect Email/Password';
+  }
+}
+
+if(!$error && isset($_POST['loginBtn'])){
+  if($email==$row['email'] && $pass==$row['password']){
+      $_SESSION['id'] = $row['name'];
+      $_SESSION['email'] = $email;
+      $_SESSION['role'] = $row['role'];
+      if($row['role'] == 'admin'){
+        header("location:admin/admin.php");
+      }
+      else{
+        header("location:user/user.php");
+      }
+  }
+  else{
+      header("location:index.php");
+  }
+}
+?>
 <html>
 <head>
   <title></title>
@@ -18,8 +61,7 @@
   <div id="formContainer">
     <div id="logo"><img src="https://pbs.twimg.com/profile_images/810772925317951488/_vANfz0U.jpg"/></div>
     <div id="forms">
-      
-      <form id="forgot">
+      <!-- <form id="forgot">
         <div class="fadeUp">
           <div class="formHead">
             <h1>FORGOT PASSWORD?</h1>
@@ -33,51 +75,44 @@
           </div>
           <div class="formOther"><a href="#" class="backLoginF">BACK TO LOGIN</a><a href="#">CONTACT STAFF</a></div>
         </div>
-      </form>
-      <form id="login">
+      </form> -->
+      <form method="post">
         <div class="formHead">
-          <h1>WELCOME BACK</h1>
-          <p>Login to continue</p>
+          <div style = "font-size:15px; color:#fff; margin-top:10px"><?php echo $error; ?></div>
+          <h1>Login to continue</h1>
         </div>
         <div class="formDiv">
-          <input type="text" placeholder="Username" name="username"/>
+          <input class="inputMaterial" type="email" name="email" placeholder="Email" required autofocus="">
         </div>
         <div class="formDiv">
-          <input type="password" placeholder="Password" name="password"/>
+          <input class="inputMaterial" type="password" name="password" placeholder="Password" required>
         </div>
         <div class="formDiv">
-          <input type="submit" value="LOGIN"/>
+          <input type="submit" value="LOGIN" name="loginBtn"/>
         </div>
-        <div class="formOther"><a href="#" class="forgotBtn">FORGOT PASSWORD?</a></div>
+        <!-- <div class="formOther"><a href="#" class="forgotBtn">FORGOT PASSWORD?</a></div> -->
       </form>
-      
     </div>
   </div>
 </div>
   <?php include('layout/footer.php'); ?>
   <script type="text/javascript">
-    
+      // JQUERY
+      $(function() {
 
-    // JQUERY
-$(function() {
-  
-  // Switch to Register
-  $('.needAccount, .backLogin').click(function() {
-    $('#login, #register, #formContainer').toggleClass('switch');
-  });
-  
-  // Open Forgot Password
-  $('.forgotBtn, .backLoginF').click(function() {
-    $('#forgot').toggleClass('forgot');
-  });
-  
-  // Open Why Register
-  $('.regBtn').click(function() {
-    $('#whyReg').toggleClass('whyRegister');
-  });
-  
-  
-});
+          // Switch to Register
+          $('.needAccount, .backLogin').click(function() {
+            $('#login, #register, #formContainer').toggleClass('switch');
+          });
+          // Open Forgot Password
+          $('.forgotBtn, .backLoginF').click(function() {
+            $('#forgot').toggleClass('forgot');
+          });
+          // Open Why Register
+          $('.regBtn').click(function() {
+            $('#whyReg').toggleClass('whyRegister');
+          });
+      });
   </script>
 </body>
 </html>

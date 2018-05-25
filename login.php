@@ -9,6 +9,7 @@ $row=mysql_fetch_array($str);
 if($email==$row['email'] && $pass==$row['password']){
     $_SESSION['id'] = $row['name'];
     $_SESSION['email'] = $email;
+    $_SESSION['role'] = $row['role'];
     if($row['role'] == 'admin'){
       header("location:admin/admin.php");
     }
