@@ -1,7 +1,9 @@
 <div class="header_logo">
   <div class="container">
+
+  
     <div class="col-md-6 text-left">
-      <img src="bootstrap/images/logo.png" />
+      <img src="images/logo.gif" />
     </div>
     <?php
     if(!$_SESSION['id'])
