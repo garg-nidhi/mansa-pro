@@ -60,9 +60,9 @@ if(!$error && isset($_POST['loginBtn'])){
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" href="login.css">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="bootstrap/js/bootstrap.min.js"></script>
   <script src="https://use.fontawesome.com/bc8520503f.js"></script>
 </head>
 <body>
@@ -71,7 +71,7 @@ if(!$error && isset($_POST['loginBtn'])){
 <!-- View settings for more info.-->
 <div id="pageContainer">
   <div id="formContainer">
-    <div id="logo"><img src="https://pbs.twimg.com/profile_images/810772925317951488/_vANfz0U.jpg"/></div>
+    <div id="logo" ><img class="rotating" src="images/earth.png"/></div>
     <div id="forms">
       <!-- <form id="forgot">
         <div class="fadeUp">

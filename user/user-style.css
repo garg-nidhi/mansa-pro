@@ -30,7 +30,7 @@ body
 {
 padding: 50px 0;
 }
-table td input[type="text"],input[type="date"]{
+table td input[type="text"],input[type="date"],select{
 	display: inline-block;
 	width: 100%;
 	font-size: 16px;
@@ -55,7 +55,11 @@ line-height: 28px;
     width: 30%;
     display: inline-block;
     padding: 12px;
+    background-color: #757677;
+    border:none;
 }
-body{
-	background: linear-gradient(#fff, #ddd); 
+.tb_cnter{
+	background: rgba(220,220,220,.6)
+
 }
+

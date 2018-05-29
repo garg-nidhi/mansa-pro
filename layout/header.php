@@ -22,12 +22,13 @@
     else
     {
     ?>
-     <div class="col-md-6 text-left">
+     <div class="col-md-6 col-sm-6 col-xs-6 text-left">
       <img src="../images/logo.gif" />
     </div>
-    <div class="col-md-6 text-right  muy_ol ">
+    <div class="col-md-6 col-sm-6 col-xs-6 text-right  muy_ol ">
              <div class="align_btns text-right"><a href="../logout_session.php" class="btn btn-danger btn-lg"> 
-          Log out
+      Log out
+
         </a></div>
 
     </div>

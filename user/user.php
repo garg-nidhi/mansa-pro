@@ -103,11 +103,12 @@ if( $retval == true ) {
 </head>
 <body>
  <?php include("../layout/header.php"); ?>
- <center>
+ <center class="tb_cnter">
 
 
   <div class="container">
-  <div class="tbl_body">
+  <div class="col-md-2 col-sm-2 col-xs-2"></div>
+  <div class="tbl_body col-md-8 col-sm-8 col-xs-8 ">
     <form method="post" name="user">
      <table class="table table-bordered">
        <thead>
@@ -187,6 +188,8 @@ if( $retval == true ) {
 </table>
 </form>
 </div>
+  <div class="col-md-2 col-sm-2 col-xs-2"></div>
+
 </div>
 </center>
 </body>

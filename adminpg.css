@@ -10,9 +10,7 @@ table {
   line-height: 40px;
   border-collapse: separate;
   border-spacing: 0;
-  border: 2px solid #ed1c40;
-  width: 500px;
-  margin: 50px auto;
+  border: 2px solid #bc423b;
   border-radius: .25rem;
 }
 
@@ -24,7 +22,7 @@ table {
 
 .first-chld,
 td:first-child {
-  padding: 0 15px 0 20px;
+  padding: 0 15px 0 0;
 }
 
 thead tr:last-child th {
@@ -59,4 +57,8 @@ td:last-child {
 
 .delete:hover {
   color: #dc2a2a;
+}
+
+.admin_pg_height{
+ min-height: 492px;
 }
