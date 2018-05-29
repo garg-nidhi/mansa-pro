@@ -26,59 +26,36 @@ body
  color:#fff;
  text-decoration:blink;
 }
-#body
+.tbl_body
 {
- margin-top:50px;
+padding: 50px 0;
 }
-table
-{
- width:80%;
- font-family:Tahoma, Geneva, sans-serif;
- font-weight:bolder;
- color:#999;
- margin-bottom:80px;
+table td input[type="text"],input[type="date"]{
+	display: inline-block;
+	width: 100%;
+	font-size: 16px;
+line-height: 28px;
 }
-table a
-{
- text-decoration:none;
- color:#00a2d1;
+
+.first-chld {
+  background: #bc423b;
+  color: #fff;
+  border: none;
 }
-table,td,th
-{
- border-collapse:collapse;
- border:solid #d0d0d0 1px;
- padding:20px;
+
+.first-chld {
+  padding: 0 15px 0 20px;
 }
-table td input
-{
- width:97%;
- height:35px;
- border:dashed #00a2d1 1px;
- padding-left:15px;
- font-family:Verdana, Geneva, sans-serif;
- box-shadow:0px 0px 0px rgba(1,0,0,0.2);
- outline:none;
+.tbl_body .table>tbody>tr>th {
+ 	vertical-align: middle;
+ }
+
+
+.tbl_body .blue_btn {
+    width: 30%;
+    display: inline-block;
+    padding: 12px;
 }
-table td input:focus
-{
- box-shadow:inset 1px 1px 1px rgba(1,0,0,0.2);
- outline:none;
-}
-table td button
-{
- border:solid #f9f9f9 0px;
- box-shadow:1px 1px 1px rgba(1,0,0,0.2);
- outline:none;
- background:#00a2d1;
- padding:9px 15px 9px 15px;
- color:#f9f9f9;
- font-family:Arial, Helvetica, sans-serif;
- font-weight:bolder;
- border-radius:3px;
- width:49.5%;
-}
-table td button:active
-{
- position:relative;
- top:1px;
+body{
+	background: linear-gradient(#fff, #ddd); 
 }

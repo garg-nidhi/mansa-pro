@@ -1,28 +1,39 @@
 <?php
+
+
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
 session_start();
-if($_SESSION['role'] == 'admin')
+$error = "";
+if(isset($_REQUEST['loginBtn']))
 {
-	header("location:admin/admin.php");
-}
-else if($_SESSION['role'] == 'user')
-{
-	header("location:user/user.php");
-}
 
 $email=$_REQUEST['email'];
 $pass=$_REQUEST['password'];
-mysql_connect("localhost","root","root");
-mysql_select_db("mansa_project");
-$str=mysql_query("SELECT * FROM `user` where email='$email' and password='$pass'");
-$row=mysql_fetch_array($str);
+$conn =mysqli_connect("localhost","root","root","mansa_project");
+$query=  "SELECT * FROM `user` where email='".$email."' and password='".$pass."'" ;
 
-$error = "";
+$str=mysqli_query($conn, $query) or mysql_die(mysqli_error($conn));
+$row=mysqli_fetch_array($str);
+
+
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
   if($email!=$row['email'] || $pass!=$row['password']){
     $error = 'Incorect Email/Password';
   }
+ 
 }
+ elseif ($_SESSION['role'] == 'admin') {
+    header("location:admin/admin.php");
+    # code...
+  }
+  else  {
+    # code...
+    header("location:user/user.php");
+  }
 
 if(!$error && isset($_POST['loginBtn'])){
   if($email==$row['email'] && $pass==$row['password']){
@@ -39,6 +50,7 @@ if(!$error && isset($_POST['loginBtn'])){
   else{
       header("location:index.php");
   }
+}
 }
 ?>
 <html>

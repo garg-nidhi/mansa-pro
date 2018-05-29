@@ -1,24 +1,35 @@
 <div class="header_logo">
-  <div class="container">
+  <div class="container ">
 
+      
+    <?php
+
+    if(empty($_SESSION['id'])) 
+    {
+    ?>
   
     <div class="col-md-6 text-left">
       <img src="images/logo.gif" />
     </div>
-    <?php
-    if(!$_SESSION['id'])
-    {
-    ?>
-    <div class="col-md-6 text-right">
-      <a href="index.php">Login</a>
+
+    <div class="col-md-6 text-right muy_ol">
+      <div class="align_btns text-right"><a href="index.php" class="btn btn-danger btn-lg">Login</a></div>
+    
     </div>
+   
     <?php
     }
     else
     {
     ?>
-    <div class="col-md-6 text-right">
-      <a href="logout_session.php">Logout</a>
+     <div class="col-md-6 text-left">
+      <img src="../images/logo.gif" />
+    </div>
+    <div class="col-md-6 text-right  muy_ol ">
+             <div class="align_btns text-right"><a href="../logout_session.php" class="btn btn-danger btn-lg"> 
+          Log out
+        </a></div>
+
     </div>
     <?php
     }

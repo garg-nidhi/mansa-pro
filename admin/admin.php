@@ -22,6 +22,7 @@ if(isset($_GET['delete_id']))
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<link rel="stylesheet" href="../login.css">
+  <link rel="stylesheet" href="../adminpg.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <script src="https://use.fontawesome.com/bc8520503f.js"></script>
@@ -41,23 +42,7 @@ if(isset($_GET['delete_id']))
    }
   }
   </script>
-  <style>
-.header_user{
-  background: #000;
-  padding: 10px 0px;
-  color:#fff;
-  font-size: 20px;
-}
-.margin{
-  margin: 0;
-}
-.padding{
-  padding:0;
-}
-.set_padding{
-  padding: 15px 0px;
-}
-  </style>
+
   <script>
   $(document).ready(function(){
     $(window).resize(function () {
@@ -70,7 +55,9 @@ if(isset($_GET['delete_id']))
   </script>
 </head>
 <body>
-	<div class="header_logo">
+
+ <?php include("../layout/header.php"); ?>
+	<!-- <div class="header_logo">
 	  <div class="container">
 	    <div class="col-md-6 text-left">
 	      <img src="../bootstrap/images/logo.png" />
@@ -79,23 +66,26 @@ if(isset($_GET['delete_id']))
 	      <a href="../logout_session.php">Logout</a>
 	    </div>
 	  </div>
-	</div>
+	</div> -->
   <div class="container">
 		<div class="row">
-			<div class="col-md-6">
+		<!-- 	<div class="col-md-6">
 				<div class="set_padding">
 					<h2 class="margin">Users</h2>
 				</div>
-			</div>
-	    <div class="col-md-6 text-right padding">
+			</div> -->
+	    <!-- <div class="col-md-6 text-right padding">
 	      <div class="set_padding">
 					<a href="add_user.php" class="btn btn-primary">Add New User</a>
 	    	</div>
-	    </div>
+	    </div> -->
 		</div>
     <div class="table-responsives">
       <table class="table table-striped">
         <thead>
+         <tr class="first-chld">
+      <th colspan="5">Users</th>
+    </tr>
           <tr>
             <th>Sr.No</th>
             <th>Username</th>
