@@ -139,7 +139,7 @@ if(isset($_GET['delete_id']))
     <!-- Modal content-->
     <div class="modal-content">
       <div class="modal-header add_usr_mdl">
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <button type="button" class="close mdl_crss" data-dismiss="modal">&times;</button>
         <h4 class="modal-title mdl_title">Add User</h4>
       </div>
       <div class="modal-body">
@@ -166,7 +166,7 @@ if(isset($_GET['delete_id']))
          {
           ?>
           <script type="text/javascript">
-            alert('Data Is Inserted Successfully ');
+           
             window.location.href='admin.php';
           </script>
           <?php

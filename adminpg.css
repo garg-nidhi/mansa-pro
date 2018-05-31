@@ -114,4 +114,19 @@ li {
   height: 100%;
   z-index: 9999;
   background: url(images/loader2.gif) center no-repeat #fff;
+  opacity: 0.8;
 }
+
+#myModal input:-webkit-autofill, #myModal
+input:-webkit-autofill:hover, #myModal
+input:-webkit-autofill:focus, #myModal
+input:-webkit-autofill:active {
+    transition: background-color 5000s ease-in-out 0s !important;
+     -webkit-text-fill-color: #000 !important;
+}
+
+
+.mdl_crss{
+  color: #fff;
+    opacity: 1;
+  }
