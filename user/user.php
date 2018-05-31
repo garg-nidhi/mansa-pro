@@ -112,8 +112,10 @@ if( $retval == true ) {
   <div class="bg"></div>
 <div class="bg bg2"></div>
 <div class="bg bg3"></div>
-  <div class="col-md-2 col-sm-2 col-xs-2"></div>
-  <div class="tbl_body col-md-8 col-sm-8 col-xs-8 ">
+  <div class="col-md-2 col-sm-2 ">
+    
+  </div>
+  <div class="tbl_body col-md-8 col-sm-8 col-xs-12 ">
     <form method="post" name="user">
      <table class="table table-bordered">
        <thead>
@@ -193,7 +195,7 @@ if( $retval == true ) {
 </table>
 </form>
 </div>
-  <div class="col-md-2 col-sm-2 col-xs-2"></div>
+  <div class="col-md-2 col-sm-2 "></div>
 
 </div>
 </center>

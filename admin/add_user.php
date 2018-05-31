@@ -17,7 +17,7 @@
 	 // sql query for inserting data into database
 	 $sql_query = "INSERT INTO user(name,email,password,role) VALUES('$name','$email','$password', 'user')";
 	 // sql query execution function
-	 if(mysql_query($sql_query))
+	 if(mysqli_query($connec,$sql_query))
 	 {
 ?>
   <script type="text/javascript">

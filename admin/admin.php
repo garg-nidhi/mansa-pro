@@ -59,12 +59,25 @@ if(isset($_GET['delete_id']))
     });
   });
 </script>
+
+
+<script type="text/javascript">
+  
+  $(document).ready(function() {
+    // Animate loader off screen
+    $(".se-pre-con").fadeOut(5000);
+
+    // alert("chakk ");
+  });
+</script>
+
 </head>
 <body>
-
  <?php include("../layout/header.php"); ?>
 
  <div class="container">
+<div class="se-pre-con"></div>
+
   <div class="bg"></div>
 <div class="bg bg2"></div>
 <div class="bg bg3"></div>
@@ -149,7 +162,7 @@ if(isset($_GET['delete_id']))
    // sql query for inserting data into database
          $sql_query = "INSERT INTO user(name,email,password,role) VALUES('$name','$email','$password', 'user')";
    // sql query execution function
-         if(mysql_query($sql_query))
+         if(mysqli_query($connec,$sql_query))
          {
           ?>
           <script type="text/javascript">
@@ -172,7 +185,7 @@ if(isset($_GET['delete_id']))
 
       <center>
 
-       <form class="form-horizontal" role="form" method="post" action="form_to_email_script.php ">
+       <form class="form-horizontal" role="form" method="post" action="">
 
         <div class="form-group">  
           <div class="col-sm-8 col-sm-offset-2"> 
@@ -217,7 +230,6 @@ if(isset($_GET['delete_id']))
    <p class="text-center">Copyright To MansaInfotech. All Rights Reserved</p>
  </div>
 </div>
-
 
 </body>
 </html>
