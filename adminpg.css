@@ -25,10 +25,13 @@ td:first-child {
   padding: 0 15px 0 0;
 }
 
-thead tr:last-child th {
-  border-bottom: 3px solid #ddd;
+table thead th {
+  text-align: center;
 }
 
+table thead .titleth{
+  text-align: left;
+}
 
 
 tbody tr:last-child td {
@@ -37,11 +40,12 @@ tbody tr:last-child td {
 
 tbody td {
   border-bottom: 1px solid #ddd;
+  text-align: center;
 }
 
 td:last-child {
-  text-align: right;
-  padding-right: 10px;
+  text-align: center;
+  
 }
 
 .button {
@@ -61,4 +65,40 @@ td:last-child {
 
 .admin_pg_height{
  min-height: 492px;
+ padding: 50px 15px 0;
+}
+
+.admin_frnt_tbl{
+ background-color: #ffffff;
+}
+
+
+.admin_frnt_tbl .adduser {
+ background-color: #333;
+ border-color: #333;
+ font-weight: bold;
+}
+.admin_frnt_tbl .adduser:hover{
+ background-color: #757677;
+ border-color: #757677;
+}
+
+ul {
+    list-style-type: none;
+display: inline-block;
+width: 100%;
+}
+li {
+    display: inline-block;
+}
+
+.gfd-ygr{
+  text-align: right;
+}
+
+@-moz-document url-prefix() {
+.admin_pg_height {
+    min-height: 509px;
+    
+}
 }

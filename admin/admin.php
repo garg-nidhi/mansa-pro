@@ -12,7 +12,7 @@ if(!$_SESSION['id'])
 if(isset($_GET['delete_id']))
 {
   $sql_query="DELETE FROM user WHERE id=".$_GET['delete_id'];
-  mysql_query($sql_query);
+  mysqli_query($connec,$sql_query);
   header("Location: $_SERVER[PHP_SELF]");
 }
 ?>
@@ -26,6 +26,8 @@ if(isset($_GET['delete_id']))
   <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
   <link rel="stylesheet" href="admin-style.css" type="text/css" />
   <link rel="stylesheet" href="../login.css">
+      <link rel="stylesheet" href="../common/back.css">
+
   <link rel="stylesheet" href="../adminpg.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="../bootstrap/js/bootstrap.min.js"></script>
@@ -63,24 +65,19 @@ if(isset($_GET['delete_id']))
  <?php include("../layout/header.php"); ?>
 
  <div class="container">
+  <div class="bg"></div>
+<div class="bg bg2"></div>
+<div class="bg bg3"></div>
   <div class="col-md-12 admin_pg_height">
     <div class="row">
-     <div class="col-md-6">
-				<!-- <div class="set_padding">
-					<h2 class="margin">Users</h2>
-				</div> -->
-			</div>
-     <div class="col-md-6 text-right padding">
-       <div class="set_padding">
-         <a href="" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Add New User</a>
-       </div>
-     </div>
+
    </div>
    <div class="table-responsives">
-    <table class="table table-striped">
+    <table class="table table-striped admin_frnt_tbl">
       <thead>
        <tr class="first-chld">
-        <th colspan="5">Users</th>
+        <th class="titleth" colspan="4"><p>Users</p></th>
+        <th class="gfd-ygr"> <a href="#" class="btn btn-primary adduser" data-toggle="modal" data-target="#myModal">Add New User</a></th>
       </tr>
       <tr>
         <th>Sr.No</th>
@@ -104,15 +101,15 @@ if(isset($_GET['delete_id']))
         <td><?php echo $row[2]; ?></td>
         <td><?php echo $row[3]; ?></td>
         <td>
-          <table  cellspacing="0" cellpadding="0" class="tbl-icons" style="border:0px;">
-            <tbody>
-              <tr>
-                <td style="border:0px;"><a href="javascript:edt_id('<?php echo $row[0]; ?>')"><img src="../bootstrap/images/edit.png" border="0" title="edit"></a></td>
-                <td style="border:0px;"><a href="javascript:delete_id('<?php echo $row[0]; ?>')"><img src="../bootstrap/images/delete.png" border="0" title="delete"></a>
-                </td>
-              </tr>
-            </tbody>
-          </table>
+          <ul>
+            
+        
+                <li><a href="javascript:edt_id('<?php echo $row[0]; ?>')"><img src="../bootstrap/images/edit.png" border="0" title="edit"></a></li>
+                <li><a href="javascript:delete_id('<?php echo $row[0]; ?>')"><img src="../bootstrap/images/delete.png" border="0" title="delete"></a>
+                </li>
+       
+          
+          </ul>
         </td>
       </tr>
       <?php

@@ -49,7 +49,7 @@ if(isset($_POST['btn-update']))
 }
 if(isset($_POST['btn-cancel']))
 {
- header("Location: admin.php");
+ header("location:admin.php");
 }
 ?>
 <!DOCTYPE>
@@ -58,40 +58,46 @@ if(isset($_POST['btn-cancel']))
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Edit User</title>
+    <link rel="stylesheet" href="../common/back.css">
 <link rel="stylesheet" href="admin-style.css" type="text/css" />
 <link rel="stylesheet" href="../login.css">
 <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
-  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="../bootstrap/js/bootstrap.min.js"></script>
-     <script src="adminjs/back.js" defer="defer"></script>
 </head>
 <body>
 <?php include("../layout/header.php"); ?>
-<!-- <div id="bg"> -->
+
  <div class="container">
-        <div class="row centered-form">
+ <div class="bg"></div>
+<div class="bg bg2"></div>
+<div class="bg bg3"></div>
+        <div class="row centered-form editpg_form">
         <div class="col-xs-12 col-sm-8 col-md-4 col-sm-offset-2 col-md-offset-4">
           <div class="panel panel-default">
             <div class="panel-heading">
               <h3 class="panel-title">Edit User Here!</h3>
             </div>
-            <div class="panel-body">
-              <form role="form">
+            <div class="panel-body frm_bdy">
+              <form role="form" action="" method="POST">
                 <div class="row">
-                  <div class="col-xs-12 col-sm-12 col-md-12">
+                  <div class="col-xs-12 col-sm-12 col-md-12 any-padding">
                     <div class="form-group">
                       <input type="text" name="name" placeholder="Name" value="<?php echo $fetched_row['name']; ?>" class="form-control input-sm" >
                     </div>
                   </div>
                 </div>
+                 <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-12 any-padding">
 
                 <div class="form-group">
                   <input type="text" name="email" placeholder="Email" value="<?php echo $fetched_row['email']; ?>" class="form-control input-sm" >
                 </div>
+                </div>
+                </div>
 
                 <div class="row">
-                  <div class="col-xs-12 col-sm-12 col-md-12">
+                  <div class="col-xs-12 col-sm-12 col-md-12 any-padding">
                     <div class="form-group">
                       <input type="password" name="password" placeholder="Password" value="<?php echo $fetched_row['password']; ?>" class="form-control input-sm" >
                     </div>
@@ -100,21 +106,25 @@ if(isset($_POST['btn-cancel']))
                 </div>
                 
                  <div class="row">
-                   <div class="col-xs-6 col-sm-6 col-md-6">
-                 <button type="submit" class="btn btn-info btn-block" name="btn-update"><strong>UPDATE</strong></button>
+                 <div class="col-md-12">                   <div class="col-xs-6 col-sm-6 col-md-6">
+                 <button type="submit" class="btn btn-info btn-block btn_updt" name="btn-update"><strong>UPDATE</strong></button>
                  </div>
                    <div class="col-xs-6 col-sm-6 col-md-6">
-          <button type="submit" class="btn btn-info btn-block" name="btn-cancel"><strong>Cancel</strong></button>
+          <button type="submit" class="btn btn-info btn-block btn_cancl" name="btn-cancel"><strong>Cancel</strong></button>
           </div>
                
               </div>
+              </div>
+
               </form>
             </div>
           </div>
         </div>
       </div>
     </div>
-    <!-- </div> -->
+
+<?php include("../layout/footer.php"); ?>
+
 
 
 

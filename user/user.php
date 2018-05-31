@@ -87,6 +87,8 @@ if( $retval == true ) {
   <title>CRUD Operations</title>
   <link rel="stylesheet" href="user-style.css" type="text/css" />
   <link rel="stylesheet" href="../login.css">
+    <link rel="stylesheet" href="../common/back.css">
+
   <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
@@ -107,6 +109,9 @@ if( $retval == true ) {
 
 
   <div class="container">
+  <div class="bg"></div>
+<div class="bg bg2"></div>
+<div class="bg bg3"></div>
   <div class="col-md-2 col-sm-2 col-xs-2"></div>
   <div class="tbl_body col-md-8 col-sm-8 col-xs-8 ">
     <form method="post" name="user">
@@ -192,5 +197,7 @@ if( $retval == true ) {
 
 </div>
 </center>
+
+<?php include("../layout/footer.php"); ?>
 </body>
 </html>
