@@ -160,7 +160,7 @@ if(isset($_GET['delete_id']))
          $password = $_POST['password'];
 
    // sql query for inserting data into database
-         $sql_query = "INSERT INTO user(name,email,password,role) VALUES('$name','$email','$password', 'user')";
+         $sql_query = "INSERT INTO `user`(`name`,`email`,`password`,`role`, `created_at`) VALUES('$name','$email','$password', 'user', 'NOW()')";
    // sql query execution function
          if(mysqli_query($connec,$sql_query))
          {
