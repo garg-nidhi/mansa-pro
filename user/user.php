@@ -116,6 +116,7 @@ if( $retval == true ) {
  
  }
 
+
  </style>
 <script type="text/javascript">
 
@@ -134,7 +135,7 @@ if( $retval == true ) {
     
   </div>
   <div class="tbl_body col-md-8 col-sm-8 col-xs-12 ">
-    <form method="post" name="user">
+    <form method="post" name="user" onsubmit="return validateFunction() ">
      <table class="table table-bordered">
        <thead>
          <tr class="first-chld">
@@ -145,7 +146,7 @@ if( $retval == true ) {
        <tr>
         <th>Employee Name</th>
         <td>
-          <input type="text" name="name" id="name" />
+          <input type="text" name="name" id="name" onkeyup="validFname()" />
           <span class="alert-danger" id="fname"></span></div>
         
         </td>
@@ -153,14 +154,14 @@ if( $retval == true ) {
       <tr>
         <th>Designation</th>
         <td>
-          <input type="text" name="designation" id="designation"/>
+          <input type="text" name="designation" id="designation" onkeyup="validDesig()"/>
             <span class="alert-danger" id="desig"></span></div>
         </td>
       </tr>
       <tr>
         <th>Reporting Person</th>
         <td>
-          <input type="text" name="reporting_person" id="reporting_person"/>
+          <input type="text" name="reporting_person" id="reporting_person" onkeyup="validrepo()"/>
            <span class="alert-danger" id="lead"></span></div>
         </td>
       </tr>
@@ -177,28 +178,28 @@ if( $retval == true ) {
       <tr>
         <th>Date</th>
         <td>
-          <input type="date" name="date" id="datepicker" min="2018-01-01">
+          <input type="date" name="date" id="datepicker" min="2018-01-01" >
            <span class="alert-danger" id="ldate"></span></div>
         </td>
       </tr>
       <tr>
-        <th>Time</th>
+        <th>Time </th>
         <td>
-          <input type="text" name="time" id="time" />
+          <input type="text" name="time" id="time" onkeypress="if ( isNaN( String.fromCharCode(event.keyCode) )) return false;" />
           <span class="alert-danger" id="ltime"></span></div>
         </td>
       </tr>
       <tr>
         <th>No. of days</th>
         <td>
-          <input type="text" name="days" id="days"/>
+          <input type="text" name="days" id="days" onkeypress="if ( isNaN( String.fromCharCode(event.keyCode) )) return false;"/>
             <span class="alert-danger" id="lday"></span></div>
         </td>
       </tr>
       <tr>
         <th>Leaves Availed</th>
         <td>
-          <input type="text" name="leaves_availed" id="leaves_availed"/>
+          <input type="text" name="leaves_availed" id="leaves_availed" onkeypress="if ( isNaN( String.fromCharCode(event.keyCode) )) return false;"/>
             <span class="alert-danger" id="lavail"></span></div>
         </td>
       </tr>
