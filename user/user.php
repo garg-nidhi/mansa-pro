@@ -185,21 +185,21 @@ if( $retval == true ) {
       <tr>
         <th>Time </th>
         <td>
-          <input type="text" name="time" id="time" onkeypress="if ( isNaN( String.fromCharCode(event.keyCode) )) return false;" />
+          <input type="text" name="time" id="time" onkeyup="validTime()" />
           <span class="alert-danger" id="ltime"></span></div>
         </td>
       </tr>
       <tr>
         <th>No. of days</th>
         <td>
-          <input type="text" name="days" id="days" onkeypress="if ( isNaN( String.fromCharCode(event.keyCode) )) return false;"/>
+          <input type="text" name="days" id="days" onkeyup="validDays()" />
             <span class="alert-danger" id="lday"></span></div>
         </td>
       </tr>
       <tr>
         <th>Leaves Availed</th>
         <td>
-          <input type="text" name="leaves_availed" id="leaves_availed" onkeypress="if ( isNaN( String.fromCharCode(event.keyCode) )) return false;"/>
+          <input type="text" name="leaves_availed" id="leaves_availed" onkeyup="validLeaves()"/>
             <span class="alert-danger" id="lavail"></span></div>
         </td>
       </tr>
